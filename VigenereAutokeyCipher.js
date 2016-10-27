@@ -1,9 +1,7 @@
 /*jshint esversion: 6 */
 
 function VigenèreAutokeyCipher(key, abc) {
-    console.log("key: ", key, "abc: ", abc);
     this.encode = function(str) {
-        console.log("enc: ", str);
         let i = 0;
         let newKey = key + str.split('').map(x => {
             return inABC(x) ? x : '';
@@ -17,7 +15,6 @@ function VigenèreAutokeyCipher(key, abc) {
         }).join('');
     };
     this.decode = function(str) {
-        console.log("dec: ", str);
         let i = 0;
         let newKey = key;
         return str.trim().split('').map((x, idx) => {
